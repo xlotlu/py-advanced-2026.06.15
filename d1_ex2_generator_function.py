@@ -14,4 +14,16 @@ def odd_squares(it):
     for elem in it:
         if elem % 2 == 1:
             yield elem ** 2
-        
+
+
+# refaceți exercițiul IterItemStartsWith
+# folosind o funcție generator
+
+def generator_item_startswith(source, substr):
+    for line in source:
+        if line.startswith(substr):
+            yield line
+
+# with open("concepts_and_cheatsheet.md") as fp:
+#     for elem in generator_item_startswith(fp, "##"):
+#         print(elem)
