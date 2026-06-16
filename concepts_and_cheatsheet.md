@@ -94,3 +94,13 @@ ca să nu băgăm totul în memorie de la început
 %autoreload 2
 
 
+# essential wisdom
+
+There are 2 really hard problems in programming:
+- naming things
+- cache invalidation
+- off-by-one errors
+
+Never underestimate the bandwith of a station wagon chock full of tapes
+hurtling down the highway.
+
