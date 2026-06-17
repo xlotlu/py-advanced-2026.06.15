@@ -83,6 +83,16 @@ ca să nu băgăm totul în memorie de la început
 6. returnăm obiectul construit
 
 
+# Decoratorul
+
+este:
+- o funcție
+- ce primește ca parametru o funcție
+- și returnează o funcție
+
+iar restul este "syntactic sugar"
+
+
 # Context managers:
 
 - sunt deschiși cu statementul with
