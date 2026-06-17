@@ -167,10 +167,8 @@ class BasePassthroughAction:
         return self
     
     def __next__(self):
-        for item in self.dataset:
-            return self.handle_item(item)
-
-        raise StopIteration()
+        item = next(self.dataset)
+        return self.handle_item(item)
     
     def handle_item(self, item):
         return item
