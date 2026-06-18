@@ -99,6 +99,45 @@ iar restul este "syntactic sugar"
 - are custom logic la deschidere și la închidere
 
 
+# Concurrency vs parallelism
+
+concurrency ⊂ parallelism
+
+în Python:
+GIL = global interpreter lock
+  --> implicația este: multi-threading în Python
+                       = single CPU core!
+
+[pânâ acum, în Python]
+True parallelism:
+  - multiprocessing (subprocese)
+  - you need some way to communicate between them
+    (from multiprocessing import shared_memory)
+
+[de curând]
+Există python free-threaded
+
+
+înainte:
+  - aplicații I/O-bound: threading
+  - aplicații CPU-bound: multiprocessing
+
+acum (cu python free-threaded)
+  - threading ok și pentru I/O-bound și pentru CPU-bound
+
+
+asyncio:
+ -- single-process, single-threaded
+        ---> potrivit pentru task-urio I/O-bound
+ -- extrem de eficient
+ -- paradigmă diferită:
+      -- unde threading-ul însemna sincronizare de mână
+         în fiecare loc unde putea exista contenție pe resursă
+      -- cu async doar spunem că noi așteptăm (await)
+         să se termine ceva din spate async
+         și scheduler-ul este liber să ruleze altă coroutină
+
+
 # despre Ipython
 %load_ext autoreload
 %autoreload 2
@@ -114,3 +153,6 @@ There are 2 really hard problems in programming:
 Never underestimate the bandwith of a station wagon chock full of tapes
 hurtling down the highway.
 
+PEBKAC = problem exists between keyboard and chair
+
+"User Error: replace user and press any key"
